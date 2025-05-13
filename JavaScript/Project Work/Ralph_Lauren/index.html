@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--Header-->
+    <header>
+        <!--Video-->
+        <video id="videoplayer" src="video1.mp4" autoplay  loop muted></video>
+        <!--Navbar-->
+        <nav>
+            <div class="logo">Ralph Lauren</div>
+            <ul>
+                <li><a href="#" onclick="filterProducts('all')">All</a></li>
+                <li><a href="#" onclick="filterProducts('men')">Men</a></li>
+                <li><a href="#" onclick="filterProducts('women')">Women</a></li>
+                <li><a href="#" onclick="filterProducts('kids')">Kids & Baby</a></li>
+                <li><a href="#">Sale</a></li>
+            </ul>
+            
+            <!--Icons-->
+            <div class="icons">
+                <i class="bi bi-search"></i>
+                <i class="bi bi-person"></i>
+                <i class="bi bi-suit-heart"></i>
+                <i class="bi bi-cart iconshopping"></i>    
+            </div>  
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="bi bi-list icon"></i>
+            </div>
+        </nav>
+        <!--Content Section-->
+        <section>
+            <h2>Polo</h2>
+            <h3>by Ralph Lauren</h3>
+            <h1>The Occasion Shop</h1>
+            <button><a href="#">Shop Now</a></button>
+        </section>
+    </header>
+
+    <!--Image Slider-->
+    <div class="img_slider">
+        <div class="img_content">
+            <p>Ralph Lauren Spring 2025</p>
+            <h2>Ralph’s Hamptons</h2>
+            <div class="btn">
+                <button><a href="#">Shop Now</a></button>
+                <button><a href="#">Explore Now</a></button>
+            </div>
+            <div class="image_slider" id="slider">
+                <img src="img1.jpg" alt="" class="slider-image">
+                <img src="img2.jpg" alt="" class="slider-image">
+                <video src="video2.mp4" autoplay loop muted></video>
+                <img src="img3.jpg" alt="" class="slider-image">
+                <img src="img4.jpg" alt="" class="slider-image">
+            </div>
+        </div>
+    </div>
+    
+    <!--Products-->
+    <div id="productList" class="product_container">
+
+    </div>
+
+    <div class="cartBox">
+        <div class="cart">
+            <i class="bi bi-x"></i>
+            <h1>Cart</h1>
+            <div id="cartItems"></div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
