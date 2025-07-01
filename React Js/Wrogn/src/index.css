@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Onest", sans-serif;
+}
+
+.scroll-hide {
+  --overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for Chrome, Safari, Opera */
+.scroll-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scroll-hide {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.swiper-button-prev  {
+  width: 40px !important;
+  height: 40px !important;
+  color: black !important;
+  background-color: #c5c5c5!important;
+  border-radius: 5px;
+  font-size: 25px !important;
+}
+
+.swiper-button-next {
+  width: 40px !important;
+  height: 40px !important;
+  color: black !important;
+  background-color: #c5c5c5 !important;
+  border-radius: 5px;
+}
+.swiper-button-next:after{
+  font-size: 25px !important;
+}
+
+.swiper-button-prev:after{
+  font-size: 25px !important;
+}
+
+.swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled {
+      opacity: 0.20 !important;
+}
+
+
+@keyframes scroll-down {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.animate-marquee-vertical {
+  animation: scroll-down 8s linear infinite;
+}
+
+.writing-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.swiper-pagination {
+  @apply flex justify-end pr-6 pb-2; 
+}
