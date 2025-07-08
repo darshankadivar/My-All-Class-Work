@@ -1,28 +1,23 @@
-import React from 'react'
-import Navbar from './Component/Navbar'
-import Sliderone from './Component/Sliderone'
-import Card from './Component/Card'
-import ViratFashionPage from './Component/ViratFashionPage'
-import TrendingCategories from './Component/TrendingCategories'
-import BestSellers from './Component/BestSellers'
-import WeAreWrogn from './Component/WeAreWrogn'
-import WrognWallpapers from './Component/Wallpapers'
-import ServiceHighlights from './Component/ServiceHighlights'
-import Footer from './Component/Footer'
+import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
-export default function App() {
+import SignIn from './component/SignIn';
+import Register from './component/Register';
+import HomePage from './component/HomePage';
+
+function App() {
+  const isAuth = JSON.parse(localStorage.getItem("auth"));
+
   return (
-    <div>
-      <Navbar/>
-      <Sliderone/>
-      <Card/>
-      <ViratFashionPage />
-      <TrendingCategories />
-      <BestSellers />
-      <WeAreWrogn />
-      <WrognWallpapers />
-      <ServiceHighlights />
-      <Footer />
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Register />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/homepage" element={isAuth ? <HomePage /> : <Navigate to="/signin" />}/>
+        <Route path="*" element={<Navigate to="/signin" />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
+
+export default App;

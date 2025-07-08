@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import { CoolMode } from "./magicui/cool-mode";
 
 const trendingCategories = [
   {
@@ -140,6 +141,7 @@ const TrendingCategories = () => {
           </h2>
 
           <div className="self-end w-full md:w-[70%] lg:w-[50%]">
+            <CoolMode>
             <Swiper
               modules={[Navigation]}
               navigation
@@ -172,6 +174,7 @@ const TrendingCategories = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
+            </CoolMode>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import { CoolMode } from "./magicui/cool-mode";
 
 const slides = [
   {
@@ -188,7 +189,7 @@ export default function Card() {
   return (
     <div className="w-full max-w-7xl mx-auto py-16 pb-8">
       <h2 className="text-center text-2xl font-bold mb-8">WEAR IT LIKE VIRAT</h2>
-
+    <CoolMode>
       <Swiper
         modules={[Navigation]}
         navigation
@@ -240,6 +241,7 @@ export default function Card() {
           </SwiperSlide>
         ))}
       </Swiper>
+      </CoolMode>
     </div>
   );
 }

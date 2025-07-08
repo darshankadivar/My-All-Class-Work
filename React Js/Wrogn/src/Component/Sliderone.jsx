@@ -9,7 +9,7 @@ export default function Sliderone() {
     // const prevRef = useRef(null);
     // const nextRef = useRef(null);
     return (
-        <div className='relative mt-3  mx-2 w-auto h-full'>
+        <div className='relative mt-3 ms-5 mx-5 w-auto h-full'>
             <Swiper
                 modules={[Pagination, Navigation, Autoplay]}
                 spaceBetween={50}
@@ -21,7 +21,7 @@ export default function Sliderone() {
                 //     prevEl: prevRef.current,
                 //     nextEl: nextRef.current
                 // }}
-                pagination={{ clickable: true, el:'.custom-pagination' }}
+                pagination={{ clickable: true, el: '.custom-pagination' }}
                 onBeforeInit={(swiper) => {
                     // swiper.params.navigation.prevEl = prevRef.current;
                     // swiper.params.navigation.nextEl = nextRef.current;
@@ -47,17 +47,17 @@ export default function Sliderone() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div>
-                        <img className='rounded-lg' src="https://wrogn.com/cdn/shop/files/Dekstop_Banner.jpg?v=1750165122" alt=""  />
+                        <img className='rounded-lg' src="https://wrogn.com/cdn/shop/files/Dekstop_Banner.jpg?v=1750165122" alt="" />
                     </div>
                 </SwiperSlide>
-                  <SwiperSlide>
+                <SwiperSlide>
                     <div>
                         <img className='rounded-lg max-h-full' src="https://wrogn.com/cdn/shop/files/InnerDesktop-Banner.webp?v=1740998390" alt="" />
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div>
-                        <img className='rounded-lg' src="https://wrogn.com/cdn/shop/files/WEBSITE-BANNER-1.webp?v=1750425641" alt=""  />
+                        <img className='rounded-lg' src="https://wrogn.com/cdn/shop/files/WEBSITE-BANNER-1.webp?v=1750425641" alt="" />
                     </div>
                 </SwiperSlide>
                 {/* <button
@@ -73,9 +73,8 @@ export default function Sliderone() {
                     &#8594;
                 </button> */}
 
-              
-                <div className=" relative">
-                      <div className="custom-pagination absolute bottom-5 right-4  justify-end z-10 flex gap-3 " />
+                <div className="relative">
+                    <div className="custom-pagination justify-end absolute bottom-7 right-4 flex gap-2 z-10" />
                 </div>
             </Swiper>
         </div>

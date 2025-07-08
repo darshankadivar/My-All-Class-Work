@@ -3,6 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import { CoolMode } from "./magicui/cool-mode";
+
 
 const products = [
   {
@@ -89,10 +91,11 @@ const ViratFashionPage = () => {
             <h3 className="text-center font-bold text-2xl">SEASON'S TOP PICKS</h3>
           </div>
           <div className="max-w-7xl mx-auto px-2">
+               <CoolMode>
             <Swiper
               modules={[Navigation]}
               navigation
-              spaceBetween={20}
+              spaceBetween={50}
               slidesPerView={1.3}
               breakpoints={{
                 640: { slidesPerView: 2.2 },
@@ -102,6 +105,7 @@ const ViratFashionPage = () => {
             >
               {products.map((product) => (
                 <SwiperSlide key={product.id}>
+                  
                   <div className="bg-white  rounded-xl shadow-sm p-2 min-w-[260px] max-w-[280px]">
                     <div className="relative">
                       <img
@@ -115,7 +119,7 @@ const ViratFashionPage = () => {
                         </div>
                       )}
                     </div>
-                    <div className="mt-2 px-2 space-y-1">
+                    <div className="mt-2 px-2 space-y-1 relative">
                       <p className="text-sm font-bold">
                         ₹{product.price.toLocaleString()}{" "}
                         <span className="line-through text-gray-400 text-xs">
@@ -126,19 +130,21 @@ const ViratFashionPage = () => {
                         </span>
                       </p>
                       <p className="text-xs text-gray-700">{product.title}</p>
-                      
+                      <CoolMode>
                       <button className="w-full mt-2 border border-black text-sm py-1 rounded hover:bg-black hover:text-white transition">
                         Add to Bag
                       </button>
-                    </div>
+                    </CoolMode>
                   </div>
+                </div>
                 </SwiperSlide>
               ))}
-            </Swiper>
-          </div>
+          </Swiper>
+          </CoolMode>
         </div>
       </div>
     </div>
+    </div >
   );
 };
 
