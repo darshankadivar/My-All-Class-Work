@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": "1926",
+      "name": "Darshan Patel",
+      "email": "darshan@gmail.com",
+      "password": "123"
+    }
+  ],
+  "posts": [
+    {
+      "id": "cb5d",
+      "name": "Darshan Patel",
+      "location": "Rajkot",
+      "content": "Dribbble is a self-promotion and social networking platform for digital designers.[1] It serves as a design portfolio platform, jobs and recruiting site, and a platform for designers to share their work online.",
+      "imageUrl": "https://cdn.dribbble.com/userupload/15085133/file/original-08260a59a2cc125e3a387397fa98ea30.png?resize=1504x1128&vertical=center"
+    },
+    {
+      "id": "30ab",
+      "name": "yash ghodasara",
+      "location": "Keshod",
+      "content": "Elephants are the largest living land animals. Three living species are currently recognised: the African bush elephant (Loxodonta africana), the African forest elephant (L. cyclotis), and the Asian elephant (Elephas maximus). They are the only surviving members of the family Elephantidae and the order Proboscidea; extinct relatives include mammoths and mastodons.",
+      "imageUrl": "https://images.pexels.com/photos/1054655/pexels-photo-1054655.jpeg?auto=compress&cs=tinysrgb&w=600"
+    }
+  ]
+}
