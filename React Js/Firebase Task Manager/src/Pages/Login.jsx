@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { MailIcon, Lock } from "lucide-react"; 
 import Swal from "sweetalert2";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../../firebaseConfig";
+import { auth, provider } from "../../firebaseConfig";
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -45,6 +45,12 @@ const Login = () => {
       });
     }
   };
+
+    const handleGoogleAuth = async () => {
+    await signInWithPopup(auth, provider).then((res) => {
+      console.log(res)
+    })
+  }
 
   return (
     <motion.div
@@ -97,7 +103,19 @@ const Login = () => {
             Sign up
           </a>
         </p>
+        <button
+          onClick={handleGoogleAuth}
+          className="flex items-center mx-auto mt-5 gap-2 px-6 py-2 bg-white border border-gray-300 rounded-lg shadow hover:shadow-md hover:bg-gray-100 transition-all duration-200 text-gray-700 font-medium"
+        >
+          <img
+            src="https://www.svgrepo.com/show/475656/google-color.svg"
+            alt="Google Logo"
+            className="w-5 h-5"
+          />
+          Sign in with Google
+        </button>
       </div>
+      
     </motion.div>
   );
 };

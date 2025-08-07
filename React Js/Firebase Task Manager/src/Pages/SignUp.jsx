@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { UserPlus } from 'lucide-react';
 import { auth, db } from '../../firebaseConfig';
 import Swal from 'sweetalert2';
+import { provider } from '../../../Firebase Task Manager/firebaseConfig';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -64,6 +65,12 @@ const Signup = () => {
       });
     }
   };
+
+  const handleGoogleAuth = async () => {
+    await signInWithPopup(auth, provider).then((res) => {
+      console.log(res)
+    })
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-200 to-blue-200 px-4">
@@ -145,6 +152,17 @@ const Signup = () => {
         <p className="text-center text-sm mt-4 text-gray-600">
           Already have an account? <a href="/" className="text-blue-500 underline">Login</a>
         </p>
+        <button
+          onClick={handleGoogleAuth}
+          className="flex items-center mx-auto mt-4 gap-2 px-6 py-2 bg-white border border-gray-300 rounded-lg shadow hover:shadow-md hover:bg-gray-100 transition-all duration-200 text-gray-700 font-medium"
+        >
+          <img
+            src="https://www.svgrepo.com/show/475656/google-color.svg"
+            alt="Google Logo"
+            className="w-5 h-5"
+          />
+          Sign in with Google
+        </button>
       </div>
     </div>
   );
